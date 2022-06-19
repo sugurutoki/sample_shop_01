@@ -1,0 +1,548 @@
+/* knowledge */
+/* 記載量が変化する可能性がある場合は、heightは使用しない方が良い */
+
+/* CSS記載必須:文字化け防止 */
+@charset "utf-8";
+
+/* --------------------
+    全体のベースとなる設定(共通)
+ *-------------------- */
+
+/* remを使用する場合は、記述が必要 */
+html{
+    font-size: 62.5%;   /* 16px × 62.5% = 10px */
+}
+
+body{
+    color:#333333;
+    /* 左のフォントが優先的に適用される */
+    /* グーグルフォンツの適用 */
+    font-family:"Open Sans",'ヒラギノ角ゴ ProN W3', Hiragino Kaku Gothic ProN, "メイリオ", Meiryo, sans-serif;
+    font-size: 1.6rem;
+}
+
+/* 画像全てに適用する */
+img{
+    max-width: 100%;    /* 画像が持つ横幅より大きくなることはない、それ以下は縮む */
+    height: auto;       /* 縦横比率を維持して画像が可変する */   
+}
+
+.text-center{
+    text-align: center; /* 指定したタグの中央 */
+}
+
+.wrapper{
+    max-width: 1140px;  /*最大の幅 */
+    margin: auto;
+}
+
+/* --------------------
+    hero-image
+ *-------------------- */
+.hero-image{
+    position: relative; /* position: absoluteの相対位置 */
+}
+
+.hero-image__text{
+    position: absolute; /* HTMLを最前面にする */
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%,0);    /* 移動形式（横、高さ、奥行き） */
+    font-size: 7.2rem;
+    /* vwは、画面の幅に応じ手、サイズを調整出来る */
+    font-size: 5vw/* 72/1440=0.05⇨0.01=1vw */;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 0.1em;  /* 文字間 */
+}
+
+/* --------------------
+    header
+ *-------------------- */
+.header{
+    background-color: #78d0fd;
+}
+
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+}
+
+.site-title{
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.btn-trigger{
+    display:none;
+}
+.nav-list{
+    display: flex;
+}
+
+.nav-item{
+    margin: 0 0 0 48px; /* 上、右、下、左の余白設定 */
+}
+
+/* nav-itemの直ぐ内側の子要素を指定 */
+.nav-item>a{
+    color: #fff;
+    text-transform: uppercase;  /* 全ての文字を大文字に変換 */
+}
+
+/* --------------------
+    about
+ *-------------------- */
+.profile{
+     padding: 80px 0;   /* 上、下の余白設定 */
+ }
+.profile-wrapper{
+    width: 560px;   /* sectionの幅 */
+    margin: auto;   /* 全体幅の中央 */
+}
+.profile__title{
+    margin: 0 0 40px;   /* 上、左右、下の余白設定 */
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.profile__eyecatch{
+    margin: 0 0 24px;
+}
+
+.profile__name{
+    margin: 0 0 40px;
+    font-size: 2.4rem;
+}
+
+.profile__text{
+    line-height: 2;             /* 対象文字のフォントサイズの何倍かを記載 */
+    text-align: justify;        /* 両端揃え */
+    text-align: inter-deograph; /* 両端揃え(IE用) */
+}
+
+/* --------------------
+    works
+ *-------------------- */
+.works{
+    padding: 80px 0;
+    background-color: #f4f4f4;
+}
+
+.works__title{
+    margin: 0 0 64px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.works__list{
+    display: flex;  /* listの横並び設定 */
+    margin: 0 0 64px;
+}
+
+.works__item{
+    width: 33.333%; /* listの横並び設定を３等分 */
+}
+
+.works__eyecatch{
+    margin: 0 0 24px;
+}
+
+.works__contents{
+    padding: 0 16px;
+}
+
+.works__heading{
+    margin: 0 0 16px;
+    font-weight: bold;
+    line-height: 1.75;
+    text-decoration: underline;
+}
+
+/* 「もっと見る」 */
+.btn{
+    display: block; /* インラインをブロックレベルに変換 */
+    width: 214px;
+    margin: auto;       /* 左右の余白を揃える */
+    padding: 21px 0;    /* 上下、左右 */
+    background-color: #1ab1FF;  /* 背景 */
+    color:#fff;                 /* 文字 */
+    font-size: 1.8rem;
+}
+
+/* --------------------
+    contact
+ *-------------------- */
+ .contact{
+    padding: 80px 0 64px;
+ }
+ 
+ 
+ .contact__title{
+    margin: 0 0 64px;
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+
+.contact-wrapper{
+    width: 560px;
+    margin: auto;
+}
+
+.form-inner{
+    display: flex;
+    flex-wrap: wrap;    /* 子要素の幅が親要素を超えた時点で折り返す */
+    margin: 0 0 40px;
+}
+
+.form-parts{
+    appearance: none;           /* 初期状態を打ち消す */
+    -webkit-appearance: none;   /* 初期状態を打ち消す「ブラウザ固有」 */
+    -moz-appearance: none;      /* 初期状態を打ち消す「ブラウザ固有」 */
+    font-size: 1.6rem;
+    border: solid 1px #c9c9c9;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.form-label{
+    max-width: 0 16px 0 0;
+    font-size: 1.4rem;
+}
+
+/* inputタグのtypeがradioの場合 */
+input[type*="radio"]{
+    appearance: none;           /* 初期状態を打ち消す */
+    -webkit-appearance: none;   /* 初期状態を打ち消す「ブラウザ固有」 */
+    -moz-appearance: none;      /* 初期状態を打ち消す「ブラウザ固有」 */
+    width: 16px;
+    height: 16px;
+    margin: 0 10px 0 0;
+    border: solid 1px #a0a0a0;
+    border-radius: 50%; /* ラジオボタンの角を取る */
+    vertical-align: -2px;
+}
+
+/* inputタグのtypeがradioの場合で、チェックされた場合 */
+input[type*="radio"]:checked{
+    background-color: #a0a0a0;
+}
+
+.form-title{
+    width: 152px;
+    margin: 0 20px 0 0;
+    font-weight: bold;
+    text-align: right;
+    padding: 8px 0 0 0;
+}
+
+/* ラジオボタンの場合 */
+.form-title.check-radio{
+    padding: 0;
+}
+
+.form-item{
+    width: 388px;
+    margin: 0 0 32px;
+}
+
+.btn-submit{
+    appearance: none;           /* 初期状態を打ち消す */
+    -webkit-appearance: none;   /* 初期状態を打ち消す「ブラウザ固有」 */
+    -moz-appearance: none;      /* 初期状態を打ち消す「ブラウザ固有」 */
+    border: none;
+}
+
+/* --------------------
+    access
+ *-------------------- */
+ .access{
+    padding: 80px 0;
+}
+.access-wrapper{
+   width: 560px;   /* sectionの幅 */
+   margin: auto;   /* 全体幅の中央 */
+}
+.access__title{
+    margin: 0 0 40px;   /* 上、左右、下の余白設定 */
+    font-size: 2.4rem;
+    font-weight: bold;
+}
+.access__text{
+   line-height: 2;             /* 対象文字のフォントサイズの何倍かを記載 */
+   text-align: justify;        /* 両端揃え */
+   text-align: inter-deograph; /* 両端揃え(IE用) */
+}
+ 
+/* --------------------
+    footer
+ *-------------------- */
+.footer{
+    background-color: #707070;
+    padding: 24px 0;
+}
+
+/* footerの中のwrapperのclassを指定 */
+.footer .wrapper{
+    position: relative;
+}
+
+.btn-pagetop{
+    position: absolute;
+    top: -78px;
+    right: 0;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #707070;
+}
+
+.icon-up{
+    display: block;
+    color: #fff;
+    font-size: 2.4rem;
+    padding: 10px 0;
+
+}
+
+.copyrights{
+    color: #fff;
+}
+
+/* --------------------
+    スマートフォン用
+ *-------------------- */
+/* 640px以下の画面で参照された場合に、cssが再適用される */
+@media screen and (max-width:640px){
+
+
+    /*--------------------
+     * header
+     *---------------------*/
+    .header{
+        position: fixed;    /* 画面固定表示 */
+        top:0;  /* 画面の一番上に固定表示 */
+        width: 100%;
+    }
+    .header-wrapper{
+        display: block;
+        height: 64px;
+    }
+    .site-title{
+        padding: 24px 0;
+        font-size: 1.6rem;
+        text-align: center;
+    }
+    .btn-trigger{
+        appearance:none;
+        -webkit-appearance:none;
+        display:block;
+        position: fixed;
+        top:16px;
+        right:12px;
+        z-index: 100;   /* htmlの重なり順を変更する */
+        width: 30px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        box-shadow:none;
+        outline:none;
+        -webkit-tap-highligh-color:rgba(0,0,0,0);
+    }
+
+    /* useタグ */
+    .btn-trigger.active use:nth-of-type(1){
+        /* transform：変形させるcss */
+        transform:translateY(30px) rotate(-45deg);
+    }
+    .btn-trigger.active use:nth-of-type(2){
+        /* 透明になる */
+        opacity: 0;
+    }
+    .btn-trigger.active use:nth-of-type(3){
+        transform:translateX(35px) translateY(-15px) rotate(45deg);
+    }
+
+    /* htmlの上に幕のように表示される */
+    .navigation{
+        display: none;
+        position: fixed;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(120,208,253,0.8);
+    }
+    .nav-list{
+        display: block;
+        padding: 84px 0 0;
+    }
+    .nav-item{
+        margin: 0 0 60px;
+        text-align: center;
+    }
+    .nav-item>a{
+        display:block;
+        font-size: 2.1rem;
+    }
+
+
+    /*--------------------
+     * hero-image
+     *---------------------*/
+    .hero-image{
+        margin: 64px 0 0;
+    }
+    .hero-image__text{
+        font-size: 2.4rem;
+        white-space:nowrap; /* 自動的に改行されることを防ぐ */
+    }
+
+
+
+    /*--------------------
+     * about
+     *---------------------*/
+     .profile-wrapper{
+         /* 画面脇の余白 */
+         box-sizing:border-box;
+         width: 100%;
+         padding: 0 10px;
+     }
+     .profile{
+        padding: 80px 0 60px;
+     }
+     .profile__title{
+        margin: 0 0 24px;
+     }
+     .profile__eyecatch img{
+         width: 138px;
+     }
+     .profile__name{
+         margin: 0 0 20px;
+     }
+    /*--------------------
+     * works
+     *---------------------*/
+     .works{
+         padding: 40px 0;
+     }
+     .works__title{
+         margin: 0 0 40px;
+     }
+     .wrapper{
+         box-sizing: border-box;
+         padding: 0 10px;
+     }
+     .works__list{
+         display:block;
+         margin: 0 0 40px;
+     }
+     .works__item{
+         width: 100%;
+         margin: 0 0 40px;
+     }
+     .works__eyecatch{
+         margin: 0 0 20px;
+     }
+     .works__heading{
+         margin: 0 0 20px;
+     }
+     .btn{
+         width: 100%;
+         padding: 17px 0;
+         font-size: 1.6rem;
+     }
+    /*--------------------
+     * contact
+     *---------------------*/
+     .contact{
+        padding: 40px 0 80px;
+     }
+     .contact-wrapper{
+        box-sizing: border-box;
+        width: 100%;
+        padding: 0 10px;
+     }
+     .contact__title{
+         margin: 0 0 40px;
+     }
+     .form-inner{
+         display: block;
+         margin: 0 0 50px;
+     }
+     .form-title{
+         width: 100%;
+         margin: 0 0 20px;
+         padding: 0;
+         text-align: left;
+     }
+     .form-item{
+         width: 100%;
+         margin: 0 0 40px;
+     }
+     .form-parts{
+         padding: 10px 8px;
+         border-radius: 0;
+     }
+     .form-label{
+         margin: 0 20px 0 0;
+         line-height: 2;
+         letter-spacing: -0.05em;
+     }
+     /* form-labelがついている最後のHTMLについてのみcssを指定する */
+     .form-label:last-of-type{
+         margin: 0;
+     }
+     .btn-submit{
+         border-radius: 0;
+     }
+
+    /*--------------------
+     * access
+     *---------------------*/
+     .access-wrapper{
+        /* 画面脇の余白 */
+        box-sizing:border-box;
+        width: 100%;
+        padding: 0 10px;
+    }
+    .access{
+       padding: 40px 0 80px;
+    }
+    .access__title{
+       margin: 0 0 24px;
+    }
+    .access__eyecatch iframe{
+        width: 100%;
+    }
+
+    /*--------------------
+     * footer
+     *---------------------*/
+     .footer{
+         padding: 20px 0;
+     }
+
+     .btn-pagetop{
+         display:none;
+     }
+     
+     .copyrights{
+         font-size: 1.2rem;
+     }
+ }
+ 
+
+@media screen and (max-width :1140px){
+
+     /* ブラウザとhtml間の余白 */
+    .header-wrapper{
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+}

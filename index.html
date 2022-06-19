@@ -1,0 +1,212 @@
+<!-- knowledge -->
+<!-- htmlでは全て小文字。（音声が正常に読み上げられれない） -->
+
+<!-- html記載必須 -->
+<!DOCTYPE html>
+<html lang="ja">
+
+<!-- html情報領域 -->
+<head>
+    <!-- 文字コード[UTF-8]:文字化け防止 -->
+    <meta charset="UTF-8">
+
+    <!-- スマートフォン対応必須記載事項 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- スマートフォン用:スマートフォンの電話番号予測機能抑止 -->     
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 検索エンジンで見つけられた時に「どう見えるか」を設定 -->
+    <title>Sample Shop</title>
+    <meta name="description" content="山梨 のSample Shopです。">
+
+     <!-- OGP関連 SNSでWebサイトがシェアされた時にどう見えるかを設定 -->   
+    <meta property="og:title" content="Sample Shop">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#">
+    <meta property="og:image" content="images/common/ogimage.png">
+    <meta property="og:site_name" content="Sample Shop">
+    <meta property="og:description" content="山梨 のSample Shopです。">
+
+    <!-- favicon && touch-icon:ブックマーク時にどうみえるかをアイコンで設定 -->
+    <link rel="apple-touch-icon" href="images/common/touch-icon.png">
+    <link rel="shortcut icon" href="images/common/favicon.ico">
+
+    <!-- web上のgoogle fontsを読み込む -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- fontawesome(画像を使わずにiconを使用する) -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+    <!-- CSS記載必須 -->
+    <!-- link rel:"stylesheet" href:CSSファイルの場所、最初にresetすること -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<!-- web表示領域 -->
+<body>
+    <!-- body背景 -->
+    <div class="hero-image">
+        <img src="images/header/IMG_0258.jpeg" alt="藍染" style="width: 1920px; height: 500px;">
+        <p class="hero-image__text">Sample Shop</p>
+    </div>
+
+    <!-- header:ロゴやグローバルナビゲーションを囲んで使用される、１つのサイトで複数使用されることもある -->
+    <header class="header">
+        <div class="wrapper header-wrapper">
+            <!-- hタグは見出し -->
+            <h1 class="site-title">Sample Shop</h1>
+
+            <!-- ハンバーガーメニュー -->
+            <!-- ボタン押下してメニューを表示する機能はJavaScript -->
+            <button class="btn-trigger">
+                <svg viewBox="0 0 44 44" xmlns:xlink="http://www.w3.org/1999/xlink" role="img" aria-labelledby="menuButtonTitle">
+                        <title id="menuButtonTitle">Menu</title>
+                        <symbol id="bar">
+                            <rect width="28" height="2" fill="#f0f0f0"></rect>
+                        </symbol>
+                        <!-- SVGの白い線 -->
+                        <use xlink:href="#bar" x="8" y="14"></use>
+                        <use xlink:href="#bar" x="8" y="24"></use>
+                        <use xlink:href="#bar" x="8" y="34"></use>
+                 </svg>
+            </button>
+
+            <!-- navは現在の文書内の他の部分や他の文書へのナビゲーションリンク -->
+            <nav class="navigation">
+                <!-- 箇条書きはulタグliタグで記述 -->
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#about">About</a></li>
+                    <li class="nav-item"><a href="#works">Works</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
+                    <li class="nav-item"><a href="#access">Access</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- WEBページの主要部分 -->
+    <main>
+        <!-- about:sectionとは、見出しのこと -->
+        <section id="about" class="profile">
+            <!-- sectionに対するCSS -->
+            <div class="profile-wrapper">
+                <!-- 見出し -->
+                <h2 class="text-center profile__title">Aizome</h2>
+                <!-- 画像はimgタグで表示、src:画像データの場所、alt:画像が取れなかった場合の表示文言 -->
+                <div class="text-center profile__eyecatch"><img src="images/about/IMG_0259.jpeg" alt="藍師の画像"></div>
+                <!-- 見出し -->
+                <h3 class="text-center profile__name">自然と調和する製法</h3>
+                <!-- pタグは文章タグ -->
+                <p class="profile__text">「天然藍灰汁発酵建」は江戸時代に確立された藍染の手法で、
+                本藍/正藍と呼ばれています。化学薬品は一切使わず、２種類の発酵を経て深い青を生み出します。
+                １つ目の発酵は藍の原料、蓼藍（たであい）の生葉から蒅（すくも）作る時。
+                徳島で育てられ、収穫された蓼藍は藍師により、１００日以上掛けて乾燥、発酵され「蒅」よ呼ばれる状態にします。
+                </p>
+            </div>
+        </section>
+
+        <!-- works -->
+        <section id="works" class="works">
+            <div class="wrapper">
+                <h2 class="works__title text-center">Works</h2>
+                <ul class="works__list">
+                    <li class="works__item">
+                        <div class="works__eyecatch">
+                            <img src="images/works/IMG_0260.jpeg" alt="バッグの画像" style="height: 500px;">
+                        </div>
+                        <div class="works__contents">
+                            <p>bag</p>  
+                            <h3 class="works__heading">It's a button which made of a zelkova whose bark was stripped off.
+                            It looks like potato chips and It's my favorite.
+                            It's a retro-inspired bag matched with lacquered handle and the button.
+                            </h3>
+
+                        </div>
+                    </li>
+                    <li class="works__item">
+                        <div class="works__eyecatch">
+                            <img src="images/works/IMG_0261.jpeg" alt="ベストの画像" style="height: 500px;">
+                        </div>
+                        <div class="works__contents">
+                            <p>men'svest</p>
+                            <h3 class="works__heading">It's men'svest I've been waiting to work on for long.
+                            With strong color contrast, you'll stand out. I hope you feel tie-dye beautiful.
+                            </h3>
+                            
+                        </div>
+                    </li>
+                    <li class="works__item">
+                        <div class="works__eyecatch">
+                            <img src="images/works/IMG_0262.jpeg" alt="染物の画像" style="height: 500px;">
+                        </div>
+                        <div class="works__contents">
+                            <P>indigotiedye</P>
+                            <h3 class="works__heading">Taking time and complicated tiedye. But really enjoyed that.</h3>
+                            
+                        </div>
+                    </li>
+                </ul>
+
+                <!-- ボタン押下時、リンク先へ移動 -->
+                <!-- href:リンク先のURL指定、target:blank指定で別タブに表示 -->
+                <a href="https://instagram.com/nobuko.yoneyama?igshid=YmMyMTAM2Y=" target="_blank" class="btn text-center">もっと見る</a>
+            </div>
+        </section>
+
+        <!-- contact -->
+        <section id="contact" class="contact">
+            <div class="contact-wrapper">
+                <h2 class="contact__title text-center">Contact</h2>
+
+                <!-- action:データの送り先ファイル名,method:データの送り方[get/post] -->
+                <form action="#" method="post">
+                    <!-- dl/dt/ddタグはお問合せフォームで使用されることが多い -->
+                    <dl class="form-inner">
+                        <dt class="form-title">お名前</dt>
+                        <dd class="form-item"><input type="text" name="name" id="name" class="form-parts"></dd>
+                        <dt class="form-title">メールアドレス</dt>
+                        <dd class="form-item"><input type="email" name="email" id="email" class="form-parts"></dd>
+                        <dt class="form-title check-radio">お問い合わせ内容</dt>
+                        <dd class="form-item">
+                            <label for="making" class="form-label"><input type="radio" name="kind" id="making" value="制作のご依頼">制作のご依頼</label>
+                            <label for="event" class="form-label"><input type="radio" name="kind" id="event" value="イベント出演依頼">イベント出演依頼</label>
+                            <label for="other" class="form-label"><input type="radio" name="kind" id="other" value="その他">その他</label>
+                        </dd>
+                        <dt class="form-title">お問い合わせ詳細</dt>
+                        <dd class="form-item">
+                            <textarea name="detail" id="detail" cols="30" rows="10" class="form-parts"></textarea>
+                        </dd>
+                    </dl>
+                    <input type="submit" value="送信" class="btn btn-submit">
+                </form>
+            </div>
+        </section>
+
+        <!-- Access -->
+        <section id="access" class="access">
+            <!-- sectionに対するCSS -->
+            <div class="access-wrapper">
+                <!-- 見出し -->
+                <h2 class="text-center access__title">Access</h2>
+
+                <!-- 地図 -->
+                <div class="text-center access__eyecatch"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207498.21548276613!2d139.6262938642808!3d35.648438846906906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188af7283c2817%3A0xabb11ebebfd05b44!2z44OV44Ol44O844OB44Oj44O85qCq5byP5Lya56S-!5e0!3m2!1sja!2sjp!4v1655569183965!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+                
+            </div>
+        </section>
+    </main>
+
+    <!-- footer:Webサイトの連絡先や著作権表記などを囲んで使用される、１つのサイトで複数使用されることもある -->
+    <footer class="footer text-center">
+        <div class="wrapper">
+            <!-- fontawesomeのフォント指定 -->
+            <a href="#" class="btn-pagetop"><span class="fa fa-angle-up icon-up"></span></a>
+            <small class="copyrights">copyrights 2022 Sample Company.</small>
+        </div>
+    </footer>
+</body>
+</html>
